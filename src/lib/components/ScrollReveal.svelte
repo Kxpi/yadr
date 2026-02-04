@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { fly, fade } from 'svelte/transition';
-	import type { Snippet } from 'svelte';
+	import { fly, fade } from "svelte/transition";
+	import type { Snippet } from "svelte";
 
 	interface Props {
 		children: Snippet;
@@ -21,7 +21,7 @@
 		delay = 0,
 		threshold = 0.1,
 		once = true,
-		class: className = ''
+		class: className = ""
 	}: Props = $props();
 
 	let element: HTMLDivElement;
@@ -59,12 +59,12 @@
 		<div
 			in:fly={{ y, x, duration, delay }}
 			out:fade={{ duration: 200 }}
-			class={className.includes('h-full') ? 'h-full' : ''}
+			class={className.includes("h-full") ? "h-full" : ""}
 		>
 			{@render children()}
 		</div>
 	{:else}
-		<div class={className.includes('h-full') ? 'opacity-0 h-full' : 'opacity-0'}>
+		<div class={className.includes("h-full") ? "opacity-0 h-full" : "opacity-0"}>
 			{@render children()}
 		</div>
 	{/if}

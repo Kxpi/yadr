@@ -1,7 +1,7 @@
 <script lang="ts">
-	import '../app.css';
-	import { siteConfig } from '$lib/config';
-	import { profile } from '$lib/data/profile';
+	import "../app.css";
+	import { siteConfig } from "$lib/config";
+	import { profile } from "$lib/data/profile";
 
 	let { children } = $props();
 </script>

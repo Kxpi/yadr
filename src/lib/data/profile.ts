@@ -23,23 +23,23 @@ export const skills = [
 	{ name: "JavaScript", category: "frontend" },
 	{ name: "HTML/CSS", category: "frontend" },
 	{ name: "Tailwind CSS", category: "frontend" },
-	
+
 	// Backend
 	{ name: "Node.js", category: "backend" },
 	{ name: "Express", category: "backend" },
 	{ name: "Python", category: "backend" },
 	{ name: "REST APIs", category: "backend" },
-	
+
 	// Databases
 	{ name: "PostgreSQL", category: "databases" },
 	{ name: "MongoDB", category: "databases" },
 	{ name: "Redis", category: "databases" },
-	
+
 	// Tools & DevOps
 	{ name: "Git", category: "tools" },
 	{ name: "Docker", category: "tools" },
 	{ name: "GitHub Actions", category: "tools" },
-	{ name: "AWS", category: "tools" },
+	{ name: "AWS", category: "tools" }
 ];
 
 export interface Experience {
@@ -78,7 +78,7 @@ export const experience: Experience[] = [
 			"Fixed bugs and improved code quality",
 			"Participated in code reviews and team planning"
 		]
-	},
+	}
 	// Add more positions as needed
 ];
 
@@ -115,6 +115,6 @@ export const certifications = [
 	{
 		name: "Certification Name",
 		issuer: "Issuing Organization"
-	},
+	}
 	// Add more certifications as needed
 ];

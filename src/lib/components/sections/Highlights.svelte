@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { highlights } from '$lib/data/profile';
-	import * as Card from '$lib/components/ui/card';
-	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-	import Code from 'lucide-svelte/icons/code';
-	import Layers from 'lucide-svelte/icons/layers';
-	import Zap from 'lucide-svelte/icons/zap';
-	import Users from 'lucide-svelte/icons/users';
+	import { highlights } from "$lib/data/profile";
+	import * as Card from "$lib/components/ui/card";
+	import ScrollReveal from "$lib/components/ScrollReveal.svelte";
+	import Code from "lucide-svelte/icons/code";
+	import Layers from "lucide-svelte/icons/layers";
+	import Zap from "lucide-svelte/icons/zap";
+	import Users from "lucide-svelte/icons/users";
 
 	const icons = [Code, Layers, Zap, Users];
 </script>
@@ -23,9 +23,13 @@
 			{#each highlights as highlight, index}
 				{@const Icon = icons[index]}
 				<ScrollReveal delay={index * 100} class="h-full">
-					<Card.Root class="p-6 hover:shadow-lg transition-all hover:-translate-y-1 h-full flex flex-col">
+					<Card.Root
+						class="p-6 hover:shadow-lg transition-all hover:-translate-y-1 h-full flex flex-col"
+					>
 						<div class="space-y-4 flex flex-col h-full">
-							<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
+							<div
+								class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0"
+							>
 								<Icon class="h-6 w-6 text-primary" />
 							</div>
 							<h3 class="text-lg font-semibold">{highlight.title}</h3>

@@ -8,3 +8,5 @@ export function cn(...inputs: ClassValue[]) {
 export type WithElementRef<T, El extends HTMLElement = HTMLElement> = T & {
 	ref?: El | null;
 };
+
+export type WithoutChildren<T> = Omit<T, "children">;
