@@ -22,6 +22,16 @@ A modern, obviously vibe-coded, dark-mode portfolio/resume website template buil
 - **Key Highlights** - Top 4 achievements or expertise areas
 - **Contact** - Form + direct email CTA
 
+
+## 📦 Tech Stack
+
+- **Framework**: [SvelteKit](https://kit.svelte.dev/) with static adapter
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Components**: [shadcn-svelte](https://www.shadcn-svelte.com/)
+- **Icons**: [Lucide Icons](https://lucide.dev/)
+- **Forms**: [Formspree](https://formspree.io/)
+
+
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -105,6 +115,65 @@ const categories = [
 ];
 ```
 
+## 🎨 Customization
+
+### Colors
+
+The template uses Tailwind CSS v4 with shadcn-svelte's zinc theme. To change colors:
+
+Edit `src/app.css` and modify the CSS variables:
+```css
+.dark {
+  --background: oklch(...);
+  --primary: oklch(...);
+  /* etc */
+}
+```
+
+### Adding/Removing Sections
+
+All sections are in `src/lib/components/sections/`. To remove a section:
+
+1. Delete the section file (e.g., `Highlights.svelte`)
+2. Remove the import and component from `src/routes/+page.svelte`
+3. Update navigation in `Navigation.svelte`
+
+### Customizing Icons
+
+The template uses [Lucide Icons](https://lucide.dev/icons) throughout. To change icons:
+
+1. **Browse available icons** at [https://lucide.dev/icons](https://lucide.dev/icons)
+2. **Find the icon** you want (e.g., "rocket")
+3. **Import it** in your component:
+   ```typescript
+   import Rocket from 'lucide-svelte/icons/rocket';
+   ```
+4. **Use it** in your template:
+   ```svelte
+   <Rocket class="h-6 w-6" />
+   ```
+
+**Example - Changing Highlights Icons:**
+
+Edit `src/lib/components/sections/Highlights.svelte`:
+
+```typescript
+// Replace these imports with your preferred icons
+import Code from 'lucide-svelte/icons/code';
+import Layers from 'lucide-svelte/icons/layers';
+import Zap from 'lucide-svelte/icons/zap';
+import Users from 'lucide-svelte/icons/users';
+
+const icons = [Code, Layers, Zap, Users];
+```
+
+The icons array matches the order of highlights in `profile.ts`, so the first icon corresponds to the first highlight, and so on.
+
+### Favicon
+
+Replace `static/favicon.svg` with your own icon.
+
+
 ## 📧 Setting Up Contact Form
 
 1. Go to [Formspree.io](https://formspree.io) and create a free account
@@ -184,40 +253,6 @@ Both work great with SvelteKit. The build settings are the same:
 - Build command: `npm run build`
 - Output directory: `build`
 
-## 🎨 Customization
-
-### Colors
-
-The template uses Tailwind CSS v4 with shadcn-svelte's zinc theme. To change colors:
-
-Edit `src/app.css` and modify the CSS variables:
-```css
-.dark {
-  --background: oklch(...);
-  --primary: oklch(...);
-  /* etc */
-}
-```
-
-### Adding/Removing Sections
-
-All sections are in `src/lib/components/sections/`. To remove a section:
-
-1. Delete the section file (e.g., `Highlights.svelte`)
-2. Remove the import and component from `src/routes/+page.svelte`
-3. Update navigation in `Navigation.svelte`
-
-### Favicon
-
-Replace `static/favicon.svg` with your own icon.
-
-## 📦 Tech Stack
-
-- **Framework**: [SvelteKit](https://kit.svelte.dev/) with static adapter
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Components**: [shadcn-svelte](https://www.shadcn-svelte.com/)
-- **Icons**: [Lucide Icons](https://lucide.dev/)
-- **Forms**: [Formspree](https://formspree.io/)
 
 ## 📝 License
 
