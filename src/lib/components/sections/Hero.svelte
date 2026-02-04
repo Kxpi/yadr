@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { profile } from '$lib/data/profile';
 	import { Button } from '$lib/components/ui/button';
+	import { base } from '$app/paths';
 	import Github from 'lucide-svelte/icons/github';
 	import Linkedin from 'lucide-svelte/icons/linkedin';
 	import Mail from 'lucide-svelte/icons/mail';
@@ -14,7 +15,7 @@
 			<div class="relative group">
 				<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary/50 to-accent rounded-full blur-lg opacity-30 group-hover:opacity-60 transition-opacity duration-800"></div>
 				<img 
-					src="/profile.jpg" 
+					src="{base}/profile.jpg" 
 					alt={profile.name} 
 					class="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full object-cover shadow-xl"
 					loading="eager"
