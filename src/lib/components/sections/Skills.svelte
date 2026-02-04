@@ -1,23 +1,23 @@
 <script lang="ts">
-	import { skills } from '$lib/data/profile';
-	import { Badge } from '$lib/components/ui/badge';
-	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
+	import { skills } from "$lib/data/profile";
+	import { Badge } from "$lib/components/ui/badge";
+	import ScrollReveal from "$lib/components/ScrollReveal.svelte";
 
 	// Dynamically extract categories from skills while preserving order
-	const categoryOrder = Array.from(new Set(skills.map(s => s.category)));
-	
+	const categoryOrder = Array.from(new Set(skills.map((s) => s.category)));
+
 	// Group skills by category
-	const skillsByCategory = categoryOrder.map(category => ({
+	const skillsByCategory = categoryOrder.map((category) => ({
 		category,
-		skills: skills.filter(s => s.category === category)
+		skills: skills.filter((s) => s.category === category)
 	}));
-	
+
 	// Capitalize category labels for display
 	function formatCategoryLabel(category: string): string {
 		return category
 			.split(/[-_\s]/)
-			.map(word => word.charAt(0).toUpperCase() + word.slice(1))
-			.join(' ');
+			.map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+			.join(" ");
 	}
 </script>
 
@@ -39,7 +39,10 @@
 						</h3>
 						<div class="flex flex-wrap gap-2">
 							{#each categorySkills as skill}
-								<Badge variant="outline" class="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default">
+								<Badge
+									variant="outline"
+									class="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+								>
 									{skill.name}
 								</Badge>
 							{/each}

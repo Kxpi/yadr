@@ -34,6 +34,7 @@ We use conventional commits:
 - `chore:` - Maintenance tasks
 
 Examples:
+
 ```
 feat: add blog section
 fix: mobile navigation not closing

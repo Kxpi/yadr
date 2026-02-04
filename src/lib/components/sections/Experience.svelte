@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { experience } from '$lib/data/profile';
-	import * as Card from '$lib/components/ui/card';
-	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-	import Building2 from 'lucide-svelte/icons/building-2';
-	import MapPin from 'lucide-svelte/icons/map-pin';
-	import Calendar from 'lucide-svelte/icons/calendar';
+	import { experience } from "$lib/data/profile";
+	import * as Card from "$lib/components/ui/card";
+	import ScrollReveal from "$lib/components/ScrollReveal.svelte";
+	import Building2 from "lucide-svelte/icons/building-2";
+	import MapPin from "lucide-svelte/icons/map-pin";
+	import Calendar from "lucide-svelte/icons/calendar";
 </script>
 
 <section id="experience" class="py-20 px-6">
@@ -18,17 +18,27 @@
 
 		<div class="relative">
 			<!-- Timeline line -->
-			<div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2 hidden md:block"></div>
+			<div
+				class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-1/2 hidden md:block"
+			></div>
 
 			<div class="space-y-8">
 				{#each experience as job, index}
 					<ScrollReveal delay={index * 100} x={index % 2 === 0 ? -20 : 20} y={0}>
-						<div class="relative md:grid md:grid-cols-2 md:gap-8 {index % 2 === 0 ? '' : 'md:direction-rtl'}">
+						<div
+							class="relative md:grid md:grid-cols-2 md:gap-8 {index % 2 === 0
+								? ''
+								: 'md:direction-rtl'}"
+						>
 							<!-- Timeline dot -->
-							<div class="absolute left-0 md:left-1/2 top-6 w-3 h-3 rounded-full bg-primary md:-translate-x-1/2 hidden md:block"></div>
+							<div
+								class="absolute left-0 md:left-1/2 top-6 w-3 h-3 rounded-full bg-primary md:-translate-x-1/2 hidden md:block"
+							></div>
 
 							<!-- Card -->
-							<div class="{index % 2 === 0 ? 'md:pr-8' : 'md:pl-8 md:col-start-2'} md:direction-ltr">
+							<div
+								class="{index % 2 === 0 ? 'md:pr-8' : 'md:pl-8 md:col-start-2'} md:direction-ltr"
+							>
 								<Card.Root class="p-6 hover:shadow-lg transition-shadow">
 									<div class="space-y-4">
 										<div class="space-y-2">
@@ -53,14 +63,14 @@
 											{job.description}
 										</p>
 
-									<ul class="space-y-2">
-										{#each job.highlights as highlight}
-											<li class="text-sm text-muted-foreground flex gap-2">
-												<span class="text-primary mt-1 flex-shrink-0">•</span>
-												<span>{highlight}</span>
-											</li>
-										{/each}
-									</ul>
+										<ul class="space-y-2">
+											{#each job.highlights as highlight}
+												<li class="text-sm text-muted-foreground flex gap-2">
+													<span class="text-primary mt-1 flex-shrink-0">•</span>
+													<span>{highlight}</span>
+												</li>
+											{/each}
+										</ul>
 									</div>
 								</Card.Root>
 							</div>

@@ -22,7 +22,6 @@ A modern, obviously vibe-coded, dark-mode portfolio/resume website template buil
 - **Key Highlights** - Top 4 achievements or expertise areas
 - **Contact** - Form + direct email CTA
 
-
 ## 📦 Tech Stack
 
 - **Framework**: [SvelteKit](https://kit.svelte.dev/) with static adapter
@@ -31,23 +30,24 @@ A modern, obviously vibe-coded, dark-mode portfolio/resume website template buil
 - **Icons**: [Lucide Icons](https://lucide.dev/)
 - **Forms**: [Formspree](https://formspree.io/)
 
-
 ## 🚀 Quick Start
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - npm (comes with Node.js)
 
 ### Installation
 
 1. **Clone this template**
+
    ```bash
    git clone git@github.com:Kxpi/yadr.git my-portfolio
    cd my-portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
@@ -58,9 +58,11 @@ A modern, obviously vibe-coded, dark-mode portfolio/resume website template buil
    - Replace `static/profile.jpg` with your photo
 
 4. **Run development server**
+
    ```bash
    npm run dev
    ```
+
    Open [http://localhost:5173](http://localhost:5173) to see your site.
 
 5. **Build for production**
@@ -75,19 +77,20 @@ A modern, obviously vibe-coded, dark-mode portfolio/resume website template buil
 
 ```typescript
 export const siteConfig = {
-  title: "Your Name | Software Engineer",
-  description: "Your professional summary",
-  url: "https://yourname.dev",
-  github: "https://github.com/your-username",
-  linkedin: "https://linkedin.com/in/yourusername",
-  email: "your.email@example.com",
-  formspreeId: "YOUR_FORM_ID", // Get from https://formspree.io
+	title: "Your Name | Software Engineer",
+	description: "Your professional summary",
+	url: "https://yourname.dev",
+	github: "https://github.com/your-username",
+	linkedin: "https://linkedin.com/in/yourusername",
+	email: "your.email@example.com",
+	formspreeId: "YOUR_FORM_ID" // Get from https://formspree.io
 };
 ```
 
 ### Profile Data (`src/lib/data/profile.ts`)
 
 Update these sections:
+
 - `profile` - Name, title, tagline, summary
 - `skills` - Your tech stack (organized by category)
 - `experience` - Work history
@@ -98,6 +101,7 @@ Update these sections:
 ### Profile Photo
 
 Replace `static/profile.jpg` with your own photo. Recommended:
+
 - Size: 400-800px square
 - Format: JPEG or WebP (for better compression)
 - Use [Squoosh.app](https://squoosh.app) to optimize
@@ -108,12 +112,72 @@ Edit the categories in `src/lib/components/sections/Skills.svelte`:
 
 ```typescript
 const categories = [
-  { key: 'frontend', label: 'Frontend' },
-  { key: 'backend', label: 'Backend' },
-  { key: 'databases', label: 'Databases' },
-  { key: 'tools', label: 'Tools & DevOps' }
+	{ key: "frontend", label: "Frontend" },
+	{ key: "backend", label: "Backend" },
+	{ key: "databases", label: "Databases" },
+	{ key: "tools", label: "Tools & DevOps" }
 ];
 ```
+
+## 🧪 Development & Code Quality
+
+### Running the Linter
+
+The project uses ESLint and Prettier for code quality and formatting:
+
+```bash
+# Check for linting errors
+npm run lint
+
+# Auto-fix linting errors
+npm run lint:fix
+
+# Check code formatting
+npm run format:check
+
+# Auto-format all files
+npm run format
+
+# Type check with svelte-check
+npm run check
+```
+
+### Pre-commit Hooks
+
+The project uses **Husky** and **lint-staged** to automatically run checks on staged files before each commit:
+
+- ✅ Runs ESLint with auto-fix on `.js`, `.ts`, `.svelte` files
+- ✅ Formats code with Prettier
+- ✅ Only processes staged files (fast!)
+
+**Setup:**
+
+```bash
+npm install  # Installs Husky hooks automatically
+```
+
+**Manual checks:**
+
+If you want to run all checks manually:
+
+```bash
+npm run lint && npm run format && npm run check
+```
+
+**Skip pre-commit (not recommended):**
+
+```bash
+git commit --no-verify -m "message"
+```
+
+All checks run automatically in GitHub Actions:
+
+- **CI Workflow** (`.github/workflows/ci.yml`):
+  - **Code Quality** job: Runs lint, format check, and type check in parallel
+  - **Build** job: Verifies the production build succeeds
+- **Deploy Workflow** (`.github/workflows/deploy-gh-pages.yml`):
+  - Runs quality checks first, then builds and deploys to GitHub Pages
+  - Only deploys if all quality checks pass
 
 ## 🎨 Customization
 
@@ -122,11 +186,12 @@ const categories = [
 The template uses Tailwind CSS v4 with shadcn-svelte's zinc theme. To change colors:
 
 Edit `src/app.css` and modify the CSS variables:
+
 ```css
 .dark {
-  --background: oklch(...);
-  --primary: oklch(...);
-  /* etc */
+	--background: oklch(...);
+	--primary: oklch(...);
+	/* etc */
 }
 ```
 
@@ -146,7 +211,7 @@ The template uses [Lucide Icons](https://lucide.dev/icons) throughout. To change
 2. **Find the icon** you want (e.g., "rocket")
 3. **Import it** in your component:
    ```typescript
-   import Rocket from 'lucide-svelte/icons/rocket';
+   import Rocket from "lucide-svelte/icons/rocket";
    ```
 4. **Use it** in your template:
    ```svelte
@@ -159,10 +224,10 @@ Edit `src/lib/components/sections/Highlights.svelte`:
 
 ```typescript
 // Replace these imports with your preferred icons
-import Code from 'lucide-svelte/icons/code';
-import Layers from 'lucide-svelte/icons/layers';
-import Zap from 'lucide-svelte/icons/zap';
-import Users from 'lucide-svelte/icons/users';
+import Code from "lucide-svelte/icons/code";
+import Layers from "lucide-svelte/icons/layers";
+import Zap from "lucide-svelte/icons/zap";
+import Users from "lucide-svelte/icons/users";
 
 const icons = [Code, Layers, Zap, Users];
 ```
@@ -172,7 +237,6 @@ The icons array matches the order of highlights in `profile.ts`, so the first ic
 ### Favicon
 
 Replace `static/favicon.svg` with your own icon.
-
 
 ## 📧 Setting Up Contact Form
 
@@ -190,6 +254,7 @@ Free tier includes 50 submissions/month.
 This project is configured to automatically deploy to GitHub Pages when you push to the `main` branch.
 
 1. **Push to GitHub**
+
    ```bash
    git init
    git add .
@@ -218,11 +283,12 @@ This project is configured to automatically deploy to GitHub Pages when you push
 
 ```javascript
 paths: {
-  base: '' // Remove or comment out the base path
+	base: ""; // Remove or comment out the base path
 }
 ```
 
 1. **Push to GitHub**
+
    ```bash
    git init
    git add .
@@ -250,9 +316,9 @@ paths: {
 ### Alternative: Vercel or Netlify
 
 Both work great with SvelteKit. The build settings are the same:
+
 - Build command: `npm run build`
 - Output directory: `build`
-
 
 ## 📝 License
 

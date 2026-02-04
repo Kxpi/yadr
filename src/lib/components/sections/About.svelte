@@ -1,10 +1,10 @@
 <script lang="ts">
-	import { profile, education, certifications } from '$lib/data/profile';
-	import { Badge } from '$lib/components/ui/badge';
-	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-	import MapPin from 'lucide-svelte/icons/map-pin';
-	import GraduationCap from 'lucide-svelte/icons/graduation-cap';
-	import Award from 'lucide-svelte/icons/award';
+	import { profile, education, certifications } from "$lib/data/profile";
+	import { Badge } from "$lib/components/ui/badge";
+	import ScrollReveal from "$lib/components/ScrollReveal.svelte";
+	import MapPin from "lucide-svelte/icons/map-pin";
+	import GraduationCap from "lucide-svelte/icons/graduation-cap";
+	import Award from "lucide-svelte/icons/award";
 </script>
 
 <section id="about" class="py-20 px-6">
