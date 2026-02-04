@@ -2,12 +2,12 @@
 	import { highlights } from '$lib/data/profile';
 	import * as Card from '$lib/components/ui/card';
 	import ScrollReveal from '$lib/components/ScrollReveal.svelte';
-	import Cloud from 'lucide-svelte/icons/cloud';
-	import Shield from 'lucide-svelte/icons/shield';
-	import GitBranch from 'lucide-svelte/icons/git-branch';
-	import TrendingDown from 'lucide-svelte/icons/trending-down';
+	import Code from 'lucide-svelte/icons/code';
+	import Layers from 'lucide-svelte/icons/layers';
+	import Zap from 'lucide-svelte/icons/zap';
+	import Users from 'lucide-svelte/icons/users';
 
-	const icons = [Cloud, Shield, GitBranch, TrendingDown];
+	const icons = [Code, Layers, Zap, Users];
 </script>
 
 <section id="highlights" class="py-20 px-6 bg-secondary/30">
