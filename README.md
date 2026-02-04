@@ -142,15 +142,42 @@ npm run format
 npm run check
 ```
 
-### Pre-commit Checks
+### Pre-commit Hooks
 
-Before committing, make sure to run:
+The project uses **Husky** and **lint-staged** to automatically run checks on staged files before each commit:
+
+- ✅ Runs ESLint with auto-fix on `.js`, `.ts`, `.svelte` files
+- ✅ Formats code with Prettier
+- ✅ Only processes staged files (fast!)
+
+**Setup:**
+
+```bash
+npm install  # Installs Husky hooks automatically
+```
+
+**Manual checks:**
+
+If you want to run all checks manually:
 
 ```bash
 npm run lint && npm run format && npm run check
 ```
 
-All checks are also run automatically in GitHub Actions on every push and pull request.
+**Skip pre-commit (not recommended):**
+
+```bash
+git commit --no-verify -m "message"
+```
+
+All checks run automatically in GitHub Actions:
+
+- **CI Workflow** (`.github/workflows/ci.yml`):
+  - **Code Quality** job: Runs lint, format check, and type check in parallel
+  - **Build** job: Verifies the production build succeeds
+- **Deploy Workflow** (`.github/workflows/deploy-gh-pages.yml`):
+  - Runs quality checks first, then builds and deploys to GitHub Pages
+  - Only deploys if all quality checks pass
 
 ## 🎨 Customization
 
