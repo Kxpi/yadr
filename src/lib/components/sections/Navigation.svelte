@@ -57,7 +57,13 @@
 			</div>
 
 			<!-- Mobile menu button -->
-			<Button variant="ghost" size="icon" class="md:hidden" onclick={() => (isOpen = !isOpen)}>
+			<Button
+				variant="ghost"
+				size="icon"
+				class="md:hidden"
+				onclick={() => (isOpen = !isOpen)}
+				aria-label={isOpen ? "Close menu" : "Open menu"}
+			>
 				{#if isOpen}
 					<X class="h-5 w-5" />
 				{:else}

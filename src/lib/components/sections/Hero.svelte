@@ -24,6 +24,7 @@
 					alt={profile.name}
 					class="relative w-44 h-44 sm:w-52 sm:h-52 rounded-full object-cover shadow-xl"
 					loading="eager"
+					fetchpriority="high"
 				/>
 			</div>
 		</div>
