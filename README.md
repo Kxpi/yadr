@@ -265,53 +265,9 @@ Free tier includes 50 submissions/month.
 
 ## 🌐 Deployment
 
-### GitHub Pages
+### Cloudflare Pages
 
-This project is configured to automatically deploy to GitHub Pages when you push to the `main` branch.
-
-1. **Push to GitHub**
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin git@github.com:Kxpi/yadr.git
-   git push -u origin main
-   ```
-
-2. **Enable GitHub Pages**
-   - Go to your repository on GitHub
-   - Click **Settings** → **Pages**
-   - Under **Build and deployment**, select:
-     - **Source**: Deploy from a branch
-     - **Branch**: `gh-pages` / `root`
-   - Click **Save**
-
-3. **Access your site**
-   - The workflow will automatically build and deploy to the `gh-pages` branch
-   - Your site will be available at: `https://kxpi.github.io/yadr/`
-   - Initial deployment takes 1-2 minutes
-   - Check the **Actions** tab to see deployment progress
-
-### Cloudflare Pages (Alternative for Custom Domains)
-
-**Note**: If deploying to Cloudflare Pages with a custom domain, you'll need to remove the base path from `svelte.config.js`:
-
-```javascript
-paths: {
-	base: ""; // Remove or comment out the base path
-}
-```
-
-1. **Push to GitHub**
-
-   ```bash
-   git init
-   git add .
-   git commit -m "Initial commit"
-   git remote add origin git@github.com:Kxpi/yadr.git
-   git push -u origin main
-   ```
+1. **Customize and push to GitHub**
 
 2. **Deploy to Cloudflare Pages**
    - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
@@ -328,6 +284,26 @@ paths: {
    - Click **Set up a custom domain**
    - Enter your domain (e.g., `yourname.dev`)
    - Cloudflare will auto-configure DNS if your domain is on Cloudflare
+
+### GitHub Pages
+
+This project is also configured to automatically deploy to GitHub Pages when you push to the `main` branch.
+
+1. **Customize and push to GitHub**
+
+2. **Enable GitHub Pages**
+   - Go to your repository on GitHub
+   - Click **Settings** → **Pages**
+   - Under **Build and deployment**, select:
+     - **Source**: Deploy from a branch
+     - **Branch**: `gh-pages` / `root`
+   - Click **Save**
+
+3. **Access your site**
+   - The workflow will automatically build and deploy to the `gh-pages` branch
+   - Your site will be available at: `https://user.github.io/yadr/`
+   - Initial deployment takes 1-2 minutes
+   - Check the **Actions** tab to see deployment progress
 
 ### Alternative: Vercel or Netlify
 
