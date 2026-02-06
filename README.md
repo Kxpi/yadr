@@ -2,6 +2,11 @@
 
 A modern, obviously vibe-coded, dark-mode portfolio/resume website template built with SvelteKit. Perfect for software engineers, full-stack developers, DevOps engineers and other technical professionals who want a clean, professional online presence.
 
+[![Lighthouse Performance](https://img.shields.io/badge/Performance-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+[![Lighthouse SEO](https://img.shields.io/badge/SEO-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+
 ## ✨ Features
 
 - 🎨 **Modern Dark Theme** - Beautiful zinc-based color scheme with glassmorphism effects
