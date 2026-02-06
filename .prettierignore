@@ -5,3 +5,4 @@ dist
 *.cjs
 package-lock.json
 pnpm-lock.yaml
+.husky

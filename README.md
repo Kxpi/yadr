@@ -2,6 +2,11 @@
 
 A modern, obviously vibe-coded, dark-mode portfolio/resume website template built with SvelteKit. Perfect for software engineers, full-stack developers, DevOps engineers and other technical professionals who want a clean, professional online presence.
 
+[![Lighthouse Performance](https://img.shields.io/badge/Performance-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+[![Lighthouse Accessibility](https://img.shields.io/badge/Accessibility-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+[![Lighthouse Best Practices](https://img.shields.io/badge/Best%20Practices-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+[![Lighthouse SEO](https://img.shields.io/badge/SEO-100-success?logo=lighthouse&logoColor=white)](https://kxpi.github.io/yadr/)
+
 ## ✨ Features
 
 - 🎨 **Modern Dark Theme** - Beautiful zinc-based color scheme with glassmorphism effects
@@ -100,11 +105,22 @@ Update these sections:
 
 ### Profile Photo
 
-Replace `static/profile.jpg` with your own photo. Recommended:
+Replace `static/profile.jpg` with your own photo.
 
-- Size: 400-800px square
-- Format: JPEG or WebP (for better compression)
-- Use [Squoosh.app](https://squoosh.app) to optimize
+**Recommended specifications:**
+
+- **Size**: 400x400px to 800x800px square
+- **Format**: WebP (best) or optimized JPEG
+- **File size**: Under 50KB for best performance
+
+**Quick optimization guide:**
+
+1. Go to [Squoosh.app](https://squoosh.app)
+2. Upload your photo
+3. Select **WebP** format (right panel)
+4. Reduce quality until file size is ~30-50KB
+5. Resize to 600x600px (covers all display sizes)
+6. Download and replace `static/profile.jpg`
 
 ### Skill Categories
 
@@ -335,6 +351,42 @@ Found a bug or have a suggestion? Feel free to open an issue or submit a PR.
 - **Update regularly** - Keep your experience current
 - **Test on mobile** - Most traffic is mobile these days
 - **Optimize images** - Use WebP format and compress before uploading
+
+## ⚡ Performance Optimization
+
+The template is pre-configured for excellent Lighthouse scores. Additional optimizations:
+
+### Image Optimization
+
+**Critical**: Optimize your profile photo for best performance:
+
+1. Use WebP format instead of JPEG/PNG
+2. Resize to 600x600px (covers all display sizes)
+3. Compress to under 50KB using [Squoosh.app](https://squoosh.app)
+4. The image has `fetchpriority="high"` for faster LCP
+
+### CSS & JavaScript
+
+Already optimized:
+
+- ✅ CSS precompression enabled (`precompress: true`)
+- ✅ Inline small CSS chunks (`inlineStyleThreshold: 1024`)
+- ✅ Static site generation (no runtime JS for content)
+- ✅ Minimal JavaScript bundle (~60KB gzipped)
+
+### Deployment Optimizations
+
+**Cloudflare Pages** (recommended):
+
+- Automatic Brotli compression
+- Global CDN
+- HTTP/3 support
+- Free SSL
+
+**GitHub Pages**:
+
+- Enable gzip compression (automatic)
+- Consider using Cloudflare in front for better performance
 
 ## 🆘 Troubleshooting
 

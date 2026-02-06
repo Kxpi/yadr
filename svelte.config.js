@@ -7,12 +7,13 @@ const config = {
 			pages: "build",
 			assets: "build",
 			fallback: null,
-			precompress: false,
+			precompress: true,
 			strict: true
 		}),
 		paths: {
 			base: process.env.NODE_ENV === "production" ? "/yadr" : ""
-		}
+		},
+		inlineStyleThreshold: 1024
 	}
 };
 
